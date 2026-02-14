@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+	<!-- ROUTES -->
+	
+	<route id="A_A" edges="E4 E6 E0 E1 E1.500 E2" />
+	<route id="A_B" edges="E4 E6 E0 E1 E1.500 E2" />
+	<route id="A_C" edges="E4 E6 E0 E1 E1.500 E2" />
+	<route id="A_D" edges="E4 E6 E0 E1 E1.500 E2" />
+	
+	<route id="B_A" edges="E5 E6 E0 E1 E1.500 E2" />
+	<route id="B_B" edges="E5 E6 E0 E1 E1.500 E2" />
+	<route id="B_C" edges="E5 E6 E0 E1 E1.500 E2" />
+	<route id="B_D" edges="E5 E6 E0 E1 E1.500 E2" />
+
+	<route id="C_A" edges="E10 E7 E0 E1 E1.500 E2" />
+	<route id="C_B" edges="E10 E7 E0 E1 E1.500 E2" />	
+	<route id="C_C" edges="E10 E7 E0 E1 E1.500 E2" />
+	<route id="C_D" edges="E10 E7 E0 E1 E1.500 E2" />	
+
+	<route id="D_A" edges="E11 E7 E0 E1 E1.500 E2" />
+	<route id="D_B" edges="E11 E7 E0 E1 E1.500 E2" />	
+	<route id="D_C" edges="E11 E7 E0 E1 E1.500 E2" />
+	<route id="D_D" edges="E11 E7 E0 E1 E1.500 E2" />	
+
+
+	<!-- VEHICLES -->
+
+	<vType id="car_A" vClass="passenger"  speedDev="0.05" tau="1.5" impatience="0.0" lcImpatience="0.0" lcSpeedGain="1.0" lcCooperative="0.2" lcOvertakeRight="0.0" lcPushy="0.1" />
+	<vType id="car_B" vClass="passenger"  speedDev="0.10" tau="1.5" impatience="0.2" lcImpatience="0.0" lcSpeedGain="2.0" lcCooperative="0.1" lcOvertakeRight="0.2" lcPushy="0.1" />
+	<vType id="car_C" vClass="passenger"  speedDev="0.10" tau="1.5" impatience="0.5" lcImpatience="0.0" lcSpeedGain="3.0" lcCooperative="0.1" lcOvertakeRight="0.4" lcPushy="0.2" />
+	<vType id="car_D" vClass="passenger"  speedDev="0.15" tau="1.5" impatience="0.7" lcImpatience="0.5" lcSpeedGain="5.0" lcCooperative="0.0" lcOvertakeRight="0.6" lcPushy="0.4" />
+	<vType id="car_E" vClass="passenger"  speedDev="0.25" tau="1.5" impatience="0.9" lcImpatience="0.8" lcSpeedGain="9.0" lcCooperative="-1" lcOvertakeRight="1.0" lcPushy="0.6" />
+	<vType id="car_A2" vClass="passenger" speedDev="0.05" tau="1.5" impatience="0.0" lcImpatience="0.0" lcSpeedGain="1.0" lcCooperative="0.2" lcOvertakeRight="0.0" lcPushy="0.1" />
+	<vType id="car_B2" vClass="passenger" speedDev="0.10" tau="1.5" impatience="0.2" lcImpatience="0.0" lcSpeedGain="2.0" lcCooperative="0.1" lcOvertakeRight="0.2" lcPushy="0.1" />
+	<vType id="car_C2" vClass="passenger" speedDev="0.10" tau="1.5" impatience="0.5" lcImpatience="0.0" lcSpeedGain="3.0" lcCooperative="0.1" lcOvertakeRight="0.4" lcPushy="0.2" />
+	<vType id="car_D2" vClass="passenger" speedDev="0.15" tau="1.5" impatience="0.7" lcImpatience="0.5" lcSpeedGain="5.0" lcCooperative="0.0" lcOvertakeRight="0.6" lcPushy="0.4" />
+	<vType id="car_E2" vClass="passenger" speedDev="0.25" tau="1.5" impatience="0.9" lcImpatience="0.8" lcSpeedGain="9.0" lcCooperative="-1" lcOvertakeRight="1.0" lcPushy="0.6" />
+		
+	<vType id="del_A" vClass="delivery"   speedDev="0.15" tau="1.5" impatience="0.0" lcImpatience="0.4" lcSpeedGain="3.0" lcCooperative="-1" lcOvertakeRight="0.2" lcPushy="0.2" />
+	<vType id="del_B" vClass="delivery"   speedDev="0.25" tau="1.5" impatience="0.5" lcImpatience="0.8" lcSpeedGain="5.0" lcCooperative="-1" lcOvertakeRight="0.8" lcPushy="0.4" />
+	<vType id="del_A2" vClass="delivery"  speedDev="0.15" tau="1.5" impatience="0.0" lcImpatience="0.4" lcSpeedGain="3.0" lcCooperative="-1" lcOvertakeRight="0.2" lcPushy="0.2" />
+	<vType id="del_B2" vClass="delivery"  speedDev="0.25" tau="1.5" impatience="0.5" lcImpatience="0.8" lcSpeedGain="5.0" lcCooperative="-1" lcOvertakeRight="0.8" lcPushy="0.4" />
+
+	<vType id="bus_A" vClass="bus"        speedDev="0.05" tau="1.5" impatience="0.0" lcImpatience="0.2" lcSpeedGain="2.0" lcCooperative="-1" lcOvertakeRight="0.0" lcPushy="0.1" />
+	<vType id="bus_B" vClass="bus"        speedDev="0.15" tau="1.5" impatience="0.3" lcImpatience="0.8" lcSpeedGain="3.0" lcCooperative="-1" lcOvertakeRight="0.8" lcPushy="0.4" />
+
+	<vType id="trk_A" vClass="truck"      speedDev="0.05" tau="1.5" impatience="0.0" lcImpatience="0.2" lcSpeedGain="1.0" lcCooperative="-1" lcOvertakeRight="0.0" lcPushy="0.1" />
+	<vType id="trk_B" vClass="truck"      speedDev="0.15" tau="1.5" impatience="0.3" lcImpatience="0.8" lcSpeedGain="1.5" lcCooperative="-1" lcOvertakeRight="0.8" lcPushy="0.4" />
+
+
+</routes>

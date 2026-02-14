@@ -1,13 +1,9 @@
-# Decentralized Variable Speed Limit Control
-## Highway Decongestion with Variable Speed Limit Control – A Decentralized, Model-Free Approach
+# V2VSL - Decentralized Variable Speed Limit Control
+## Highway Decongestion with Variable Speed Limit Control – A Decentralized, Model- & Infrastructure-Free Approach
 
-**Authors:**        Kevin Riehl, Davide Pusino
+**Authors:**        Kevin Riehl, Davide Pusino, Anastasios Kouvelas, Michail A. Makridis
 
-**Organization:**   ETH Zürich, Switzerland
-
-**Date:**           2024, June 30th
-
-**Submitted to:**   Advanced Topics in Control (lecture 227-0690-12 FS2024)
+**Organization:**   ETH Zürich, Switzerland, Institute for Transport Planning and Systems (IVT)
 
 ----------
 
@@ -28,14 +24,38 @@ The proposed method achieves traffic improvements similar to previous, centraliz
 
 ### Technology
 The decentralized approach is infrastructure-free and model-free, it requires solely vehicle-2-vehicle connected vehicles, and builds upon following technologies:
-- **Communication**
-  - Dedicated short range communication (DSRC)
-- **State Estimation**
-  - Discrete time consensus algorithm
-- **Information Dissemination**
-  - Gossip algorithm
-- **Actuation**
-  - Bellman control law (two-point, bang-bang)
+
+<table border="1" style="width:100%; border-collapse:collapse;">
+  <tr>
+    <td style="vertical-align:top; padding:10px;">
+      <ul>
+        <li><strong>Communication</strong>
+          <ul>
+            <li>Dedicated short range communication (DSRC)</li>
+          </ul>
+        </li>
+        <li><strong>State Estimation</strong>
+          <ul>
+            <li>Discrete time consensus algorithm</li>
+          </ul>
+        </li>
+        <li><strong>Information Dissemination</strong>
+          <ul>
+            <li>Gossip algorithm</li>
+          </ul>
+        </li>
+        <li><strong>Actuation</strong>
+          <ul>
+            <li>Bellman control law (two-point, bang-bang)</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+    <td style="text-align:center; vertical-align:middle;">
+      <a href="figures/algorithm.PNG"> <img src="figures/algorithm.PNG" alt="Algorithm diagram" width="200px"> </a>
+    </td>
+  </tr>
+</table>
 
 ### What you will find in this repository
 In this repository you will find a Python implementation of the proposed decentralized variable speed limit control.
@@ -81,17 +101,17 @@ Relative, in ACTUA AREA     12.24 %
 ### Simulation Parameters
 You can define following simulation parameters:
 - **Vehicle-Spawning-Specific**
-  - *SHARE_CONNECTED* **[%]** how many of vehicles are connected via DSRC
-  - *SHARE_COMPLIANT* **[%]** $\tau$ how many of the connected vehicles comply with control
+  - $\alpha$ *SHARE_CONNECTED* **[%]**  how many of vehicles are connected via DSRC
+  - $\gamma$ *SHARE_COMPLIANT* **[%]**  how many of the connected vehicles comply with control
   - *SPAWN_FLOW_PER_ROUTE* **[veh/h]** equals one fourth of per lane in-flow reported in paper
 - **Communication-Specific**
-  - *DSRC_COMM_DIST* **[m]** maximum communication distance for DSRC
-  - *DSRC_COMM_PERIOD* **[sec]** every n seconds transaction of message takes place
+  - $d_c$ *DSRC_COMM_DIST* **[m]** maximum communication distance for DSRC
+  - $t_r$ *DSRC_COMM_PERIOD* **[sec]** every n seconds transaction of message takes place
   - *DSRC_COMM_ITERATIONS_PER_ROUND* **[#]** if DSRC_COMM_PERIOD = 1, and want more than once per second, then increase here
-  - *MAX_CONSIDERED_INFO_AGE* **[sec]** maximum considered information age, if older, not considered anymore by vehicles in acutation section
+  - $a_{max}$ *MAX_CONSIDERED_INFO_AGE* **[sec]** maximum considered information age, if older, not considered anymore by vehicles in acutation section
 - **Control-Specific**
-  - *SPEED_CONTROL_THRESHOLD* **[km/h]** $v_{thr}$ if estimated ROI speed drops below this threshold, compliant vehicle in actuation section will start to decelerate
-  - *SPEED_CONTROL_SLOW_FACTOR* **[%]** $\tau$ reduce speed to share of vehicle's default max speed (~100km/h)
+  - $v_{thr}$ *SPEED_CONTROL_THRESHOLD* **[km/h]** if estimated ROI speed drops below this threshold, compliant vehicle in actuation section will start to decelerate
+  - $\tau$ *SPEED_CONTROL_SLOW_FACTOR* **[%]** reduce speed to share of vehicle's default max speed (~100km/h)
 - **Simulation-Specific**
   - *WARMUP_TIME* **[sec]** simulation run-time to get traffic in equilibrium-state, before recording should not be considered
   - *SIMULATION_TIME* **[sec]** simulation run-time / duration 
@@ -101,14 +121,14 @@ You can define following simulation parameters:
   - *SHALL_EXECUTE_COMMUNI* **[boolean]** turn on/off communication between vehicles
 
 ### Acknowledgements
-We thank Giulia De Pasquale, Carlo Cenedese, Michail Makridis, and Anastasios Kouvelas for their useful feedback and valuable support.
-Moreover, we thank Prof. Florian Dörfler for his lecture on Advanced Topics in Control.
+We thank Giulia De Pasquale, Carlo Cenedese, Michail A. Makridis, and Anastasios Kouvelas for their useful feedback and valuable support.
+Moreover, we thank Prof. Florian Dörfler for his lecture on *Advanced Topics in Control* at ETH Zürich.
 
 ### Citation
 ```
-@article{riehlpusino2024,
-  title={Highway Decongestion with Variable Speed Limit Control – A Decentralized, Model-Free Approach},
-  author={Riehl, Kevin and Pusino, Davide},
-  journal/conference={????},
-  year={2024}
+@article{riehlpusino2026,
+  title={V2VSL -- Infrastructure-Free, Decentralized Variable Speed Limit Control},
+  author={Riehl, Kevin and Pusino, Davide and Kouvelas, Anastasios and Makridis, Michail A.},
+  journal={Data Science for Transporation},
+  year={2026}
 } ```
